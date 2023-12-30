@@ -16,7 +16,8 @@
 % \usepackage[UTF8]{ctex}
 \usepackage{animate} % insert gif
 \usepackage{caption}
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,autocite=superscript]{biblatex}
+\AtBeginBibliography{\small}
 \addbibresource{refs.bib}
 \captionsetup[figure]{font=scriptsize}
 
@@ -243,35 +244,59 @@
 \end{frame}
 
 \begin{frame}{Introduction}
-  \begin{itemize}
-    \item Complex networks are ubiquitous in nature and society (e.g., social networks, biological systems, power grids).
-    \item Synchronization: the tendency of individual units to exhibit coordinated behavior.
-    \item Importance in control theory, neuroscience, social dynamics, and more.
+ \begin{itemize}
+    \item Synchronization on complex networks is a fascinating phenomenon that explores how interconnected systems can achieve coordinated behavior.
+    \item Among collective phenomena in natural and social systems, the synchronization of a set of interacting individuals or units has been intensively studied because of its ubiquity in the natural world.
+    \item It is applied on engineering systems, biological systems, social dynamics, and more
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Modeling Synchronization}
+\begin{frame}{Phenomena}
+    Metronome synchronization, firefly flashing, circadian rhythms, brain networks.
+\begin{figure}
+  \begin{minipage}[b]{0.45\textwidth}
+    \textbf{Schooling Fish}\par\medskip
+    \includegraphics[width=0.4\textwidth]{schooling_fish.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    \textbf{Bioluminescence in Oceans}\par\medskip
+    \includegraphics[width=0.4\textwidth]{bioluminescence.png}
+  \end{minipage}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Synchronization}
   \begin{figure}
     \centering
   \end{figure}
   \begin{itemize}
-    \item Coupled oscillator models: represent network dynamics mathematically.
-    \item Coupling strength: a key parameter influencing synchronization.
-    \item Different models (Kuramoto, Winfree, etc.) suit different scenarios.
+    \item Synchronization is the process by which components of a system adjust their behavior to a common rhythm or pattern. In complex networks, this involves individual nodes aligning their states or dynamics due to their interactions.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Network Topology and Synchronization}
+
+\begin{frame}{Network Topology}
   \begin{itemize}
-    \item Topology (random, scale-free, small-world) affects synchronization patterns.
+    \item Network Topology: The structure of connections significantly impacts synchronization. Scale-free networks often synchronize more easily than random networks, while small-world networks can exhibit both synchronous and asynchronous behaviors.
+    \item Topology (random, scale-free network, Erdős–Rényi model) affects synchronization patterns.
     \item Clustering coefficient and average shortest path length influence emergence and spreading.
-    \item Examples: firefly flashing, circadian rhythms, brain networks.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Synchronization in Nature}
+  \begin{figure}
+    \centering
+  \end{figure}
+  \begin{itemize}
+    \item Synchronization phenomena are observed in diverse natural systems.
+    \item Example: Firefly flashing patterns.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Scale-free network}
   \begin{itemize}
-   \item A \href{https://en.wikipedia.org/wiki/Scale-free_network}{scale-free network} is a network whose degree distribution follows a power law, at least asymptotically.
+   \item A scale-free network\cite{wiki:scale_free_network} is a network whose degree distribution follows a power law, at least asymptotically.
   \end{itemize}
   \begin{figure}
     \centering
@@ -286,18 +311,10 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Synchronization in Nature}
-  \begin{figure}
-    \centering
-  \end{figure}
-  \begin{itemize}
-    \item Synchronization phenomena are observed in diverse natural systems.
-    \item Example: Firefly flashing patterns \cite{Lee2009a}.
-  \end{itemize}
-\end{frame}
-
 \begin{frame}{References}
     \printbibliography
 \end{frame}
 
 \end{document}
+
+
