@@ -1,10 +1,54 @@
 %!TeX encoding = UTF-8
 %!TeX program = xelatex
 \documentclass[notheorems, aspectratio=54]{beamer}
-\setbeamertemplate{navigation symbols}{}
 \useoutertheme{shadow}
 
 \setbeamertemplate{headline}{}
+\mode<presentation>{
+    \usetheme{Warsaw}
+    % Boadilla CambridgeUS
+    % default Antibes Berlin Copenhagen
+    % Madrid Montpelier Ilmenau Malmoe
+    % Berkeley Singapore Warsaw
+    \usecolortheme{seagull}
+    % beetle, beaver, orchid, whale, dolphin, seagull
+    % \useoutertheme{infolines}
+    % infolines miniframes shadow sidebar smoothbars smoothtree split tree
+    % \useinnertheme{circles}
+    % circles, rectanges, rounded, inmargin
+}
+% \setbeamertemplate{footline}{}
+% \setbeamertemplate{footline}[frame number]{}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertauthor\ - \insertinstitute
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+%gets rid of bottom navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%gets rid of footer
+% \addtobeamertemplate{navigation symbols}{}{%
+%     \usebeamerfont{footline}%
+%     \usebeamercolor[fg]{footline}%
+%     \hspace{1em}%
+%     \insertframenumber/\inserttotalframenumber
+% }
+
 % aspectratio: 1610, 149, 54, 43(default), 32
 
 
@@ -123,20 +167,6 @@
 
 % ----------------------------------------------
 
-\mode<presentation>{
-    \usetheme{Warsaw}
-    % Boadilla CambridgeUS
-    % default Antibes Berlin Copenhagen
-    % Madrid Montpelier Ilmenau Malmoe
-    % Berkeley Singapore Warsaw
-    \usecolortheme{seagull}
-    % beetle, beaver, orchid, whale, dolphin, seagull
-    \useoutertheme{infolines}
-    % infolines miniframes shadow sidebar smoothbars smoothtree split tree
-    \useinnertheme{circles}
-    % circles, rectanges, rounded, inmargin
-}
-
 % ---------------------------------------------------------------------
 % Jet Black Theme
 % \setbeamercolor{normal text}{fg=white,bg=black!90}
@@ -233,10 +263,10 @@
 % -------------------------------------------------------------
 
 %% preamble
-\title[Paths to Synchronization on Complex Networks]{Paths to Synchronization on Complex Networks}
+\title{Paths to Synchronization on Complex Networks}
 % \subtitle{The subtitle}
 \author{Jingsheng Gao}
-\institute[AQNU]{garrison.null@gmail.com}
+\institute{Anqing Normal University}
 
 % -------------------------------------------------------------
 
