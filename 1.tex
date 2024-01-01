@@ -1,8 +1,8 @@
 %!TeX encoding = UTF-8
 %!TeX program = xelatex
 \documentclass[
-    notheorems,
-    aspectratio=54,
+  notheorems,
+  aspectratio=54,
 ]{beamer}
 
 %% preamble
@@ -14,8 +14,8 @@
 \useoutertheme{shadow}
 \setbeamertemplate{headline}{}
 \mode<presentation>{
-    \usetheme{Warsaw}
-    \usecolortheme{seagull}
+  \usetheme{Warsaw}
+  \usecolortheme{seagull}
 }
 
 \setbeamertemplate{footline}
@@ -57,6 +57,7 @@
 \usepackage{amsthm}
 \usepackage{lmodern}
 % \usepackage[UTF8]{ctex}
+% \usepackage{xeCJK}
 \usepackage{animate} % insert gif
 
 \usepackage{lipsum}
@@ -72,6 +73,7 @@
 \usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
     decorations.pathreplacing,decorations.pathmorphing,shapes,%
     matrix,shapes.symbols}
+
 
 
 % ----------------------------------------------
@@ -200,8 +202,53 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{4. Models and analysis}
+  \begin{itemize}
+    \item The Kuramoto model, first proposed by Yoshiki Kuramoto, is a nonlinear dynamic system used in describing synchronization of coupled oscillators that initially have random natural frequencies and phases.
+    \item In mathematics, the master stability function is a tool used to analyze the stability of the synchronous state in a dynamical system consisting of many identical systems which are coupled together, such as the Kuramoto model.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{4.1 Nonlinear system}
+  In mathematics, a linear map (or linear function) $f(x)$ is one which satisfies both of the following properties:
+  \begin{itemize}
+    \item Additivity or superposition principle: ${\displaystyle \textstyle f(x+y)=f(x)+f(y)}$;
+    \item Homogeneity: ${\displaystyle \textstyle f(\alpha x)=\alpha f(x)}$.
+  \end{itemize}
+  An equation written as $f(x)=C$ is called linear if $f(x)$ is a linear map (as defined above) and nonlinear otherwise.
+\end{frame}
+
+\begin{frame}{4.1 Nonlinear system}
+  \begin{itemize}
+    \item System of linear differential equations:
+    ${\displaystyle {\begin{aligned}y_{1}'(x)&=b_{1}(x)+a_{1,1}(x)y_{1}+\cdots +a_{1,n}(x)y_{n}\\[1ex]&\;\;\vdots \\[1ex]y_{n}'(x)&=b_{n}(x)+a_{n,1}(x)y_{1}+\cdots +a_{n,n}(x)y_{n}\end{aligned}}}$
+    \\ where $b_{n}$ and the $a_{i,j}$ are functions of x. In matrix notation, this system may be written
+${\displaystyle \mathbf {y} '=A\mathbf {y} +\mathbf {b}}$.
+    \item A system of differential equations is said to be nonlinear if it is not a system of linear equations. For example:
+  \\\centering ${\frac  {d\theta _{i}}{dt}}=\omega _{i}+{\frac  {K}{N}}\sum _{{j=1}}^{{N}}\sin(\theta _{j}-\theta _{i}),\qquad i=1\ldots N$.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{4.2 Kuramoto model}
+  In the most popular version of the Kuramoto model, each of the oscillators is considered to have its own intrinsic natural frequency
+  $\omega _{i}$, and each is coupled equally to all other oscillators.
+  The most popular form of the model has the following governing equations:
+  \\\centering ${\frac  {d\theta _{i}}{dt}}=\omega _{i}+{\frac  {K}{N}}\sum _{{j=1}}^{{N}}\sin(\theta _{j}-\theta _{i}),\qquad i=1\ldots N$,
+  \\\raggedright where the system is composed of N limit-cycle oscillators, with phases ${\displaystyle \theta _{i}}$ and coupling constant K.
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{kuramoto_oscilators.jpg}
+  \end{figure}
+\end{frame}
+
 \begin{frame}{References}
     \printbibliography
+\end{frame}
+
+\begin{frame}{}
+  \centering \Huge
+  \emph{Thanks for listening!}
 \end{frame}
 
 \end{document}
