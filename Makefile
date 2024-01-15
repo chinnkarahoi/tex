@@ -5,7 +5,9 @@ ${file}.pdf: ${file}.tex
 	xelatex -interaction=nonstopmode $<
 	biber $(basename $<)
 	xelatex -interaction=nonstopmode $<
-	DISPLAY=:0 xdg-open $@
+
+open:
+	DISPLAY=:0 xdg-open ${file}.pdf
 
 clean:
 	- rm -f ${file}.aux ${file}.dvi ${file}.log ${file}.toc ${file}.pdf ${file}.log ${file}.pdf ${file}.bbl ${file}.blg ${file}.out ${file}.bcf ${file}.nav ${file}.html ${file}.xml ${file}.snm ${file}.toc ${file}.run.xml
