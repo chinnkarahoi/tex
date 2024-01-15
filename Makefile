@@ -1,5 +1,5 @@
 .PHONY: ubuntu clean all
-file=1
+file=intro_to_complex_network
 all: ${file}.pdf
 ${file}.pdf: ${file}.tex
 	xelatex -interaction=nonstopmode $<
