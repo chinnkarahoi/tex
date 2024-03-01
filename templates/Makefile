@@ -1,5 +1,5 @@
 .PHONY: ubuntu clean all
-file=templates
+file=main
 all: ${file}.pdf
 ${file}.pdf: ${file}.tex
 	xelatex -interaction=nonstopmode -no-pdf $<
