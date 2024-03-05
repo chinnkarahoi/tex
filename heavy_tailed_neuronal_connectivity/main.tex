@@ -193,7 +193,7 @@ p; bottom).
 
 \begin{frame}{2. Model of Hebbian self–organization}
   \begin{itemize}
-    \item e-i, Analytic model predictions of the
+    \item Analytic model predictions of the
 Drosophila central brain (e),1 Drosophila optic medulla (f), C. elegans connectome (g), Platynereis
 sensory–motor circuit (h), and mouse retina (i).
   \end{itemize}
@@ -203,6 +203,83 @@ sensory–motor circuit (h), and mouse retina (i).
   \end{figure}
 \end{frame}
 
+\begin{frame}{3. Activity–dependent plasticity produces clustering}
+  \begin{itemize}
+    \item The model above generates networks with realistic connection strengths, even without including the effects of neuronal activity.
+    \item In classical Hebbian plasticity, synaptic connections evolve not just on their own, but also in response to the correlations between neurons.
+    \item Propose a model of neuronal activity to extend former network dynamics to include activity–dependent plasticity.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{3.1 Model of neuronal activity}
+  \begin{itemize}
+    \item While
+      one can implement varying degrees of biological realism, for simplicity here we consider artificial neurons that, between each network update, reach steady–state activities $x_{i}$ defined by
+      the self–consistent equations $x_{i} = tanh(\beta\sum_{j}{A_{ij}x_{j}}) $
+      , where $\beta \geq 0$ parameterizes the strength
+      of interactions, and the connections $A_{ij}$ are implicitly normalized by $N\bar{s}$ (see Methods).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{3.2 Activity–dependent plasticity}
+  \begin{itemize}
+    \item We are now prepared to extend our network dynamics to include activity–dependent plasticity. The random pruning and random growth remain unchanged;
+      but for Hebbian growth, rather than selecting a connection with probability proportional to its current strength $A_{ij}$ , we instead select a pair of neurons with probability proportional to their covariance $C_{ij}$.
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./screenshot/8.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{3.2 Activity–dependent plasticity}
+  \begin{itemize}
+    \item Distributions of connection strengths for different interaction strengths interaction strength
+      $\beta$ in networks of $N = 103$ neurons, Hebbian probability $p = 0.5$, and average connection strength $\bar{s} = 1$.
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./screenshot/9.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{3.3 Clustering}
+  \begin{itemize}
+    \item Real neuronal networks are known to exhibit a high density of triangles, a property known as clustering.
+    \item Clustering is typically quantified using the ratio $N_{\triangle}/N_{\wedge}$ of the number of neuron triangles $N_{\triangle}$ to the
+number of triplets $N_{\wedge}$ (sets of three neurons with at least two connections).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{3.3 Clustering}
+  \begin{itemize}
+    \item Simulating
+      networks with the same average connection strength $\bar{s}$ as the Drosophila central brain, the original
+activity–independent model can capture the connection heterogeneity observed in the data, but fails to produce realistic clustering (Fig. b). However,
+by generalizing to activity–dependent plasticity, the networks can simultaneously attain both the
+connection heterogeneity and clustering observed in the Drosophila connectome (Fig. c)
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{./screenshot/10.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{4 Conclusion}
+  \begin{itemize}
+    \item Across a diverse range of species, the strengths of neuronal connections are similarly heavy–tailed, suggesting a common underlying mechanism. Here, we develop a minimal model
+in which synaptic connectivity self–organizes under a mixture of Hebbian and random dynamics.
+    \item Moreover, by
+generalizing the model to include activity–dependent plasticity, the network dynamics naturally
+give rise to clustering, another prominent feature of neuronal connectivity.
+    \item Given
+the simplicity of the model, future work can immediately begin to include more realistic plasticity
+mechanisms, which, in turn, may produce additional properties observed in neuronal connectomes.
+  \end{itemize}
+\end{frame}
+
+
+\nocite{*}
 \begin{frame}{References}
     \printbibliography
 \end{frame}
